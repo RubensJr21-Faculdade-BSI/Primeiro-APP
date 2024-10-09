@@ -23,8 +23,14 @@ public class NextActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        // Obtém a intent passada na solucitação ao sistema operacional
         Intent i = getIntent();
+        // Obtém valor passado pela intent através do 'Extra' de nome 'text', atribuindo à variável text_pass_by_intent
+        String text_pass_by_intent = i.getStringExtra("text");
+        // Obtém elemento de TextView através função findViewById presente classe AppCompatActivity e guarda na variável tvText
         TextView tvText = this.findViewById(R.id.tvText);
-        tvText.setText(i.getStringExtra("text"));
+        // Muda texto do elemento - que é referenciado pela variável tvText - para o valor da variável text_pass_by_intent
+        tvText.setText(text_pass_by_intent);
     }
 }
